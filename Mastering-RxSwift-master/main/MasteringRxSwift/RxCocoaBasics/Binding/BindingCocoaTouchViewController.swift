@@ -1,4 +1,4 @@
-//
+ //
 //  Copyright (c) 2019 KxCoding <kky0317@gmail.com>
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -22,6 +22,7 @@
 
 import UIKit
 
+
 class BindingCocoaTouchViewController: UIViewController {
      
    @IBOutlet weak var valueLabel: UILabel!
@@ -34,8 +35,9 @@ class BindingCocoaTouchViewController: UIViewController {
       valueLabel.text = ""
       valueField.delegate = self
       valueField.becomeFirstResponder()
+    
+
    }
-   
    override func viewWillDisappear(_ animated: Bool) {
       super.viewWillDisappear(animated)
       

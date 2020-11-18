@@ -38,8 +38,18 @@ class BindingRxCocoaViewController: UIViewController {
       valueLabel.text = ""
       valueField.becomeFirstResponder()
       
-      
-      
+//    valueField.rx.text
+//        .observeOn(MainScheduler.instance)
+//        .subscribe(onNext: {[weak self] str in
+//            self?.valueLabel.text = str
+//        })
+//        .disposed(by: disposeBag)
+   
+    valueField.rx.text
+        .bind(to: valueLabel.rx.text)
+        .disposed(by: disposeBag)
+    
+    
    }
    
    override func viewWillDisappear(_ animated: Bool) {
