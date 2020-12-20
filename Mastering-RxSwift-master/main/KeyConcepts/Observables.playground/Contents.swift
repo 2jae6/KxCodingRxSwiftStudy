@@ -29,7 +29,7 @@ import RxSwift
 
 
 // #1
-Observable<Int>.create{
+let o1 = Observable<Int>.create{
     (observer) -> Disposable in
     
     observer.on(.next(0))
@@ -39,7 +39,22 @@ Observable<Int>.create{
     
     return Disposables.create()
 }
+o1.subscribe{
+    print("===start===")
+    print($0)
+    
+    if let elem = $0.element{
+        print(elem)
+    }
+    print("===end===")
+}
+
 // #2
+print("---------------")
+
+o1.subscribe(onNext: { elem in
+print(elem)
+})
 Observable.from([0, 1])
 
 
