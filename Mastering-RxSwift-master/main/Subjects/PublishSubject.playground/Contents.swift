@@ -49,3 +49,7 @@ o2.disposed(by: disposeBag)
 subject.onNext("Subject")
 subject.onCompleted()
 
+let o3 = subject.subscribe{
+    print(">> 3", $0)
+}
+o3.disposed(by: disposeBag)
